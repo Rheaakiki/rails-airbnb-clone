@@ -1,0 +1,22 @@
+<h1 class="text-center"> All Fields </h1>
+
+<div class="text-center padded">
+  <%= link_to "Rent Out My Field", new_field_path, class: "btn btn-primary" %>
+</div>
+
+<div class="col-xs-12 col-sm-4">
+  <div class="card-wrapper">
+
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(")>
+      <div class="card-category text-right">
+
+        <% @result.each do |r|  %>
+        <p><%= link_to r.title , field_path(r) %></p>
+
+        <% end  %>
+      </div>
+    </div>
+
+  </div>
+
+

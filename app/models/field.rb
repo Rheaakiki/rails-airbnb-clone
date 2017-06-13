@@ -5,4 +5,14 @@ class Field < ApplicationRecord
   validates :title, presence: true
   validates :price, presence: true
   validates :location, presence: true
+
+def self.available?
+
+
 end
+
+
+end
+
+
+

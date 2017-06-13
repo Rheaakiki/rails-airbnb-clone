@@ -6,10 +6,6 @@ class Field < ApplicationRecord
   validates :price, presence: true
   validates :location, presence: true
 
-def self.available?
-
-
-end
 
 
 end

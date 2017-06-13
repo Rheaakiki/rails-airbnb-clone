@@ -1,21 +1,34 @@
 class FieldsController < ApplicationController
   def index
-  @result = []
+   @result_final = []
    @fields = Field.all
    date = params[:search_value]
-   booking_search =  Date.strptime(date, '%m/%d/%Y')
+   @booking_search =  Date.strptime(date, '%m/%d/%Y')
 
-    @fields.each do |field|
-     field.bookings.each do |booking|
-     if booking.date != booking_search
-      @result << field
-     end
-     end
+   @bookings = Booking.select { |booking| booking.date == @booking_search }
+
+   if @bookings.empty?
+    @result = Field.all
+   else
+
+    ids = @bookings.map do |r|
+      r.field.id
     end
+
+    @result_final = Field.where.not(id: ids)
+
   end
+
+  raise
+ end
+
+  # @result.select(:field_id,:date).uniq
+
 
   def show
     @field = Field.find(params[:id])
+    date = params[:date]
+    @booking_search =  Date.strptime(date, '%m/%d/%Y')
   end
 
   def new
@@ -35,6 +48,8 @@ class FieldsController < ApplicationController
 
   def destroy
   end
+
+
 
 private
   def field_params

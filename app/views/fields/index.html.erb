@@ -11,7 +11,8 @@
       <div class="card-category text-right">
 
         <% @result.each do |r|  %>
-        <p><%= link_to r.title , field_path(r) %></p>
+
+        <p><%= link_to r.title , field_path(r, :date => params[:search_value]) %></p>
 
         <% end  %>
       </div>

@@ -1,8 +1,36 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
 <% if user_signed_in?  %>
-
-<%= link_to 'sign out', destroy_user_session_path, method: :delete %>
+<%=  link_to 'sign out', destroy_user_session_path, method: :delete %>
 
 <% end %>
+
+<% if user_signed_in? == false %>
+
+<button class="btn btn-danger" data-toggle="modal" data-target="#sign-up"> <%=  link_to 'sign up', new_user_registration_path, method: :get %>
+
+</button>
+
+<div class="modal fade id="sign-up"></div>
+
+<% end %>
+
+<% if user_signed_in? == false %>
+
+<button class="btn btn-danger" data-toggle="modal" data-target="#log-in"> <%=  link_to 'log in', new_user_session_path, method: :get %>
+
+</button>
+
+<div class="modal fade id="log-in"></div>
+
+<% end %>
+
+<div class="container">
+<div class="row">
+<div col-xs-6 col-xs-offset-6>
+<form action="" class="navbar-wagon-search">
+  <input class="navbar-wagon-search-input" placeholder="Pick a date">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-th btn datepicker"></i></span>
+</form>
+</div>
+</div>
+</div>

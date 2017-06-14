@@ -36,10 +36,8 @@
 
 /* Navbar right section (with form, links, button) */
 .navbar-wagon-right {
-  // display: flex;
-  // align-items: center;
-  // justify-content: space-between;
-  // margin-left: auto;
+  vertical-align: bottom;
+  display: inherit;
 }
 
 /* Navbar item */
@@ -47,6 +45,7 @@
   flex: 0 1 auto;
   cursor: pointer;
   padding: 0 20px;
+  display: inline-block;
 }
 
 /* Navbar standard link */

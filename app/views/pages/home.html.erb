@@ -3,18 +3,17 @@
   <div class="banner-content">
     <h1><em>Claim Your Next Soccer Turf</em> </h1>
     <p>Find the perfect soccer pitch for your next match! <br> It's quick and easy</p>
+</div>
 
-<div class="container center">
-<div class="row">
-<div col-xs-6 col-xs-offset-6>
-<form action="" class="navbar-wagon-search center">
+
+
 
 <div class="container">
   <div class="row">
     <div col-xs-6 col-xs-offset-6>
 
     <%= form_tag('/search', method: 'get') do  %>
-     <%= text_field_tag :search_value,nil, placeholder: 'Enter search term...', class: "datepicker" %>
+     <%= text_field_tag :search_value,nil, placeholder: 'Pick a date', class: "datepicker" %>
      <%= submit_tag 'search' %>
 
      <% end  %>
@@ -23,5 +22,6 @@
 </div>
 </div>
 </div>
+
 
 

@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def show
     @bookings = Booking.where(user_id: current_user.id)
     @fields = @bookings.map {|booking| booking.field}
+
   end
 
   private

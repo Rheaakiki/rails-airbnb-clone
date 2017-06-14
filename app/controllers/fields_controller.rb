@@ -8,9 +8,11 @@ class FieldsController < ApplicationController
 
    @bookings = Booking.select { |booking| booking.date == @booking_search }
 
+
    if @bookings.empty?
     @result = Field.all
   else
+
 
     ids = @bookings.map do |r|
       r.field.id

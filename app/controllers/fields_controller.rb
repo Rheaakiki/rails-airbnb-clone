@@ -1,5 +1,6 @@
 class FieldsController < ApplicationController
   def index
+    raise
    @result_final = []
    @fields = Field.all
    date = params[:search_value]

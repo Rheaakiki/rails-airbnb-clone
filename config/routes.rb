@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   resources :bookings
 
   get "user", to: "users#show"
-  get '/search', to: 'fields#index', as: 'search'
-  
+  get "/search", to: "fields#index", as: "/search"
+end
 end

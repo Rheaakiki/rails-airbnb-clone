@@ -8,14 +8,20 @@
 <div class="row">
 <div col-xs-6 col-xs-offset-6>
 <form action="" class="navbar-wagon-search center">
-  <input class="navbar-wagon-search-input" placeholder="Pick a date">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-th btn datepicker"></i></span>
-</form>
-</div>
-</div>
-</div>
+
+<div class="container">
+  <div class="row">
+    <div col-xs-6 col-xs-offset-6>
+
+    <%= form_tag('/search', method: 'get') do  %>
+     <%= text_field_tag :search_value,nil, placeholder: 'Enter search term...', class: "datepicker" %>
+     <%= submit_tag 'search' %>
+
+     <% end  %>
 
 </div>
-
+</div>
+</div>
+</div>
 
 

@@ -9,7 +9,7 @@ class FieldsController < ApplicationController
 
    if @bookings.empty?
     @result = Field.all
-   else
+  else
 
     ids = @bookings.map do |r|
       r.field.id
@@ -19,8 +19,6 @@ class FieldsController < ApplicationController
 
   end
 
-  raise
- end
 
   # @result.select(:field_id,:date).uniq
 
@@ -46,12 +44,14 @@ class FieldsController < ApplicationController
   def update
   end
 
+
   def destroy
   end
 
+end
 
+  private
 
-private
   def field_params
     params.require(:field).permit(:title, :price, :location, :size, :availability, :floor_type, :description)
   end

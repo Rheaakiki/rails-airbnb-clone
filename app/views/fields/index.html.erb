@@ -10,7 +10,7 @@
     <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(")>
       <div class="card-category text-right">
 
-        <% @result.each do |r|  %>
+        <% @result_final.each do |r|  %>
 
         <p><%= link_to r.title , field_path(r, :date => params[:search_value]) %></p>
 

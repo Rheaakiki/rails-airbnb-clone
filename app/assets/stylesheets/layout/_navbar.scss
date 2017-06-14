@@ -1,13 +1,16 @@
 /* Main class */
 .navbar-wagon {
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
+  background: rgba(24,85,127,0.5);
   transition: all 0.3s ease;
   display: flex;
   height: 70px;
   padding: 0px 30px;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  position: fixed;
+
 }
 
 /* Optional class to fix the navbar on top */
@@ -20,15 +23,23 @@
 }
 
 /* Navbar logo */
+.navbar-wagon-brand {
+  position: relative;
+  left: 47%;
+}
 .navbar-wagon-brand img {
-  width: 50px;
+  width: 60px;
+  vertical-align: -80px;
+  // text-align: center;
+  // margin: 0 auto;
 }
 
 /* Navbar right section (with form, links, button) */
 .navbar-wagon-right {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  // display: flex;
+  // align-items: center;
+  // justify-content: space-between;
+  // margin-left: auto;
 }
 
 /* Navbar item */
@@ -40,11 +51,11 @@
 
 /* Navbar standard link */
 .navbar-wagon-link {
-  color: #616668;
+  color: #ffffff;
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: #289e4e;
   text-decoration: none;
 }
 
@@ -54,22 +65,22 @@
   padding: 0 20px;
   border-radius: 20em;
   line-height: 40px;
-  background-color: #D23333;
+  background-color: #289e4e;
   color: white;
   font-size: 14px;
-  border: 2px solid #D23333;
+  // border: 2px solid #D23333;
 }
 .navbar-wagon-button:hover {
   color: white;
-  background: #D23333;
-  border-color: #ac2626;
+  // background: #D23333;
+  border: 2px solid #55f16d;
 }
 
 /* Navbar search form */
 .navbar-wagon-search {
   flex: 0 1 300px;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   padding: 0 10px;
   position: relative;
 }
@@ -97,6 +108,7 @@
 }
 .navbar-wagon-search-input:focus  {
   border: 1px solid #CCCCCC;
+  width:0px;
 }
 
 /* Navbar dropdown menu */
@@ -128,4 +140,12 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+#circle {
+  width: 50px;
+  height: 50px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  background: red;
 }

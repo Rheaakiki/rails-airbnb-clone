@@ -1,7 +1,31 @@
+<style>
+.image_home {
+  height: 100px;
+  position: center;
+}
+
+.banner-show {
+  color: black;
+}
+
+</style>
+
+<div class="banner banner-show">
+<div class="text-center">
+<% avatar_url = current_user.facebook_picture_url || "ball-01.png" %>
+
+<%= link_to user_profile_path(current_user) do %>
+<%= image_tag avatar_url, :class => "image_home" %><%= t(".profile") %>
+<% end %>
+<h1><%= @user.username %></h1>
+
+<%= @user.email %>
+
 <% current_user.bookings.each do |booking| %>
 <%= booking.field.title %>
 <%= booking.date %>
 <% end  %>
 
 <%= link_to "edit your profile", edit_user_registration_path %>
-
+</div>
+</div>

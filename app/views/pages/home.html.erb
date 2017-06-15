@@ -1,43 +1,27 @@
-
-<% if user_signed_in?  %>
-<%=  link_to 'sign out', destroy_user_session_path, method: :delete %>
-
-<% end %>
-
-<% if user_signed_in? == false %>
-
-<button class="btn btn-danger" data-toggle="modal" data-target="#sign-up"> <%=  link_to 'sign up', new_user_registration_path, method: :get %>
-
-</button>
-
-<div class="modal fade id="sign-up"></div>
-
-<% end %>
-
-<% if user_signed_in? == false %>
-
-<button class="btn btn-danger" data-toggle="modal" data-target="#log-in"> <%=  link_to 'log in', new_user_session_path, method: :get %>
-
-</button>
-
-<div class="modal fade id="log-in"></div>
-
-<% end %>
-
+<!-- BANNER -->
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_url 'stadium.jpg' %>);">
+  <div class="banner-content">
+    <h1><em>Claim Your Next Soccer Turf</em> </h1>
+    <p>Find the perfect soccer pitch for your next match! <br> It's quick and easy</p>
 <div class="container">
   <div class="row">
     <div col-xs-6 col-xs-offset-6>
 
     <%= form_tag('/search', method: 'get') do  %>
-     <%= text_field_tag :search_value,nil, placeholder: 'Enter search term...', class: "datepicker" %>
-     <%= submit_tag 'search' %>
+     <%= text_field_tag :search_value,nil, placeholder: 'Pick a date', class: "datepicker" %>
+     <%= submit_tag 'search', class: "commit" %>
 
      <% end  %>
-<!-- <form action="" class="navbar-wagon-search">
-  <input class="navbar-wagon-search-input" placeholder="Pick a date">
-  <span class="input-group-addon"><i class="glyphicon glyphicon-th btn datepicker"></i></span>
-</form> -->
+
 </div>
 </div>
 </div>
+</div>
+
+
+
+
+</div>
+
+
 

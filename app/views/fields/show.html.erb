@@ -1,0 +1,18 @@
+<p><b> Field name:</b> <%= @field.title %> </p>
+
+<p><b>Bookings</b></p>
+
+<% @field.bookings.each do |booking| %>
+<p> <%= booking.date  %> </p>
+<p> <%= booking.user.email  %> </p>
+
+
+
+
+<% end %>
+
+<%= link_to "Book for #{params[:date]}" ,field_bookings_path(@field, :date => @booking_search), :method=> :post %>
+
+
+
+

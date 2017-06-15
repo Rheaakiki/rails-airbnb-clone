@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Field.create(title: "arbi's field", price: 50, location: "Travessera")
-Field.create(title: "rhea's field", price: 30, location: "beirut")
-Field.create(title: "danie's field" price: 40, location: "barcelona")
+rhea = User.create(username: "rheaakiki", email: "rhea.akiki@myass.com", phone_number: "0505050055")
+arbi = User.create(username: "arbiarbi", email: "arbi@myass.com", phone_number: "06060606")
+daniel = User.create(username: "danieldaniel", email: "daniel@myass.com", phone_number: "0505070")
+Field.create(title: "arbi's field", price: 50, location: "Travessera", owner: arbi)
+Field.create(title: "rhea's field", price: 30, location: "beirut", owner: rhea)
+Field.create(title: "daniel's field", price: 40, location: "barcelona", owner: daniel)

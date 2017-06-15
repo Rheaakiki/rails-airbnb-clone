@@ -1,18 +1,60 @@
-<p><b> Field name:</b> <%= @field.title %> </p>
+<style>
 
-<p><b>Bookings</b></p>
+  .btn-show{
+    background-color: #289e4e;
+    border-radius: 20px;
+    margin: 0 auto;
+  }
 
-<% @field.bookings.each do |booking| %>
-<p> <%= booking.date  %> </p>
-<p> <%= booking.user.email  %> </p>
+  .rhea-button{
+    color: white;
+
+  }
+
+.banner{
+  size: cover !important;
+  height: 1000px;
+}
 
 
+  .text-show{
+    color: white;
+    margin-top: 100px;
+
+  }
+
+</style>
+
+<div class="banner" style="background-image: url(https://static.pexels.com/photos/74158/studjo-yavor-miastko-74158.jpeg)">
+<div class="banner-content">
+
+<div class="text-show text-center">
+
+  <h2><b><%= @field.title %></b></h2>
+
+  <h2>Previous Bookings</h2>
+
+</div>
+
+  <% @field.bookings.each do |booking| %>
+  <h3><%= booking.date  %> | <%= booking.user.email  %></h3>
+  <br>
+
+  <% end %>
+  <div class="container">
+  <div class="card">
+  <div class="row">
+
+<div class="col-xs-4 col-xs-offset-4">
+  <button class="btn btn-lg btn-show">
+
+    <%= link_to "Book for #{params[:date]}" ,field_bookings_path(@field, :date => @booking_search), :method=> :post, :data => {:confirm => 'Are you sure you want to book this field?'}, :class => 'rhea-button'%>
 
 
-<% end %>
-
-<%= link_to "Book for #{params[:date]}" ,field_bookings_path(@field, :date => @booking_search), :method=> :post %>
-
-
-
-
+  </button>
+  </div>
+  </div>
+  </div>
+</div>
+</div>
+</div>

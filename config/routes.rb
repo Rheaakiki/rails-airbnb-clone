@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   get "/user/:id/profile", to: "users#show" , as: "user_profile"
+  get "/fields/:id/confirmation", to: "bookings#confirmation", as: "booking_confirmation"
 
 end

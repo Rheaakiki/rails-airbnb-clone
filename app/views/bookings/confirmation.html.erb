@@ -1,0 +1,32 @@
+<style>
+
+  .home-button{
+    border-radius: 20px;
+    margin-top: 25px;
+    padding: 15px;
+    border-style: none;
+    background-color: #289e4e;
+    opacity: 0.85;
+  }
+
+  .home-button:hover {
+  background-color: black;
+     transform: rotateY(360deg);
+   transition: transform 10s;
+
+  }
+</style>
+
+<div class="banner" style="background-image: url(https://static.pexels.com/photos/147482/pexels-photo-147482.jpeg)">
+<div class="banner-content">
+
+<div class="text-center">
+  <h1><b>Congrats</b></h1>
+  <h2><%= @booking.user.email %> </h2>
+  <h3> Your booking on <b><%= @booking.date %></b> at <b><%= @booking.field.title %></b> is confirmed </h3>
+
+      <b><%= button_to "Take me back home", root_path, method: :get, class: "home-button" %></b>
+</div>
+</div>
+</div>
+

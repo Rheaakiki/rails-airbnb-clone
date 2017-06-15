@@ -3,12 +3,31 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 // .datepicker{
-//   background-color: #32b796;
-//   border-radius: 8px;
+//   border-radius: 4px;
+//   direction: ltr;
+//   padding-right: 30%;
+//   border: 0px;
+//   height: 27px;
 // }
+
+.picker_style {
+  width: 46%;
+  border: 0px;
+  height: 27px;
+}
 
 .commit{
   border-radius: 4px;
   direction: ltr;
   background-color: rgb(40, 158, 78);
+  border: 0px ;
+  width:100px;
+}
+
+ .commit:hover {
+  border: 1px solid #55f16d;
+}
+
+#search_value{
+  padding-left: 7px;
 }

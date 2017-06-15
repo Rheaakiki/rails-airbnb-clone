@@ -52,6 +52,7 @@
 .navbar-wagon-link {
   color: #ffffff;
   font-size: 14px;
+  padding-top: 12px;
 }
 .navbar-wagon-link:hover {
   color: #289e4e;
@@ -139,12 +140,4 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
-}
-#circle {
-  width: 50px;
-  height: 50px;
-  -webkit-border-radius: 25px;
-  -moz-border-radius: 25px;
-  border-radius: 25px;
-  background: red;
 }

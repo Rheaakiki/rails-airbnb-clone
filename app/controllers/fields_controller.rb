@@ -16,8 +16,18 @@ class FieldsController < ApplicationController
     ids = @bookings.map do |r|
       r.field.id
     end
+  end
 
     @result_final = Field.where.not(id: ids)
+
+    @map_fields = Field.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@map_fields) do |flat, marker|
+
+      marker.lat flat.latitude
+      marker.lng flat.longitude
+      # marker.infowindow render_to_string(partial: "/flats/map_box", locals: { flat: flat })
+    end
 
   end
 
@@ -50,11 +60,11 @@ class FieldsController < ApplicationController
   def destroy
   end
 
+
+
+private
+
+def field_params
+  params.require(:field).permit(:title, :price, :location, :size, :availability, :floor_type, :description)
 end
-
-  private
-
-  def field_params
-    params.require(:field).permit(:title, :price, :location, :size, :availability, :floor_type, :description)
-  end
 end

@@ -1,5 +1,7 @@
-<%= @bookings %>
-<%= @fields %>
+<% current_user.bookings.each do |booking| %>
+<%= booking.field.title %>
+<%= booking.date %>
+<% end  %>
 
 <%= link_to "edit your profile", edit_user_registration_path %>
 

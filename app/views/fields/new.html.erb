@@ -1,3 +1,10 @@
+<div class="container">
+<div class="card">
+
+<div class="row">
+<div class="col-xs-4 col-xs-offset-4">
+
+
 <%= simple_form_for [@field] do |f| %>
 <%= f.error_notification %>
 
@@ -6,8 +13,14 @@
 <%=f.input :size %>
 <%=f.input :address %>
 <%=f.input :availability %>
+
 <%=f.input :floor_type %>
 <%=f.input :price %>
 <%=f.button :submit, class: "btn btn-primary" %>
 
 <% end %>
+
+</div>
+</div>
+</div>
+</div>

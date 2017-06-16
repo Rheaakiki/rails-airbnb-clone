@@ -1,14 +1,14 @@
-<h1 class="text-center"> All Fields </h1>
+<h1 class="text-center margin-top"> <em><strong>Select Your Turf</strong></em></h1>
 
-<div class="text-center padded">
+<!-- <div class="text-center">
   <%= link_to "Rent Out My Field", new_field_path, class: "btn btn-primary" %>
-</div>
+</div> -->
 
 <% if @bookings.empty? %>
 <% @result.each do |r|  %>
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-6">
+    <div class="col-xs-12 col-sm-6 card-image">
       <%= render 'card', result: r %>
     </div>
       <% end  %>

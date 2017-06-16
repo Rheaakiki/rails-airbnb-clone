@@ -1,51 +1,54 @@
-<<<<<<< HEAD
-<div id="map" style="width: 100%; height: 600px;"></div>
 
-<% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    $(document).ready(function() {
-      var handler = Gmaps.build('Google');
-      handler.buildMap({ internal: { id: 'map' } }, function() {
-        markers = handler.addMarkers(<%= raw @hash.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-        if (markers.length == 0) {
-          handler.getMap().setZoom(2);
-        } else if (markers.length == 1) {
-          handler.getMap().setZoom(14);
-        }
-      });
-    });
-  <% end %>
-<% end %>
-
-<h1 class="text-center"> All Fields </h1>
-=======
 <h1 class="text-center"> <em><strong>Select Your Turf</strong></em></h1>
->>>>>>> search_front_end
 
-<!-- <div class="text-center">
-  <%= link_to "Rent Out My Field", new_field_path, class: "btn btn-primary" %>
-</div> -->
-
-<% if @bookings.empty? %>
-<% @result.each do |r|  %>
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-6 card-image">
-      <%= render 'card', result: r %>
-    </div>
-      <% end  %>
-  <% else  %>
-  <% @result_final.each do |t|  %>
+    <div class="col-xs-8">
+      <% if @bookings.empty? %>
+      <% @result.each do |r|  %>
+      <div class="container">
 
-    <div class="col-xs-12 col-sm-5">
-      <%= render 'card', result: t %>
+          <div class="col-xs-12 col-sm-6 card-image">
+            <%= render 'card', result: r %>
+          </div>
+          <% end  %>
+          <% else  %>
+          <% @result_final.each do |t|  %>
+
+          <div class="col-xs-12 col-sm-6">
+            <%= render 'card', result: t %>
+          </div>
+          <% end  %>
+          <% end  %>
+
+
     </div>
-  </div>
+    <div class="col-xs-4">
+
+      <div id="map" style="width: 100%; height: 600px;"></div>
+
+      <% content_for(:after_js) do %>
+      <%= javascript_tag do %>
+      $(document).ready(function() {
+      var handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function() {
+      markers = handler.addMarkers(<%= raw @hash.to_json %>);
+      handler.bounds.extendWith(markers);
+      handler.fitMapToBounds();
+      if (markers.length == 0) {
+      handler.getMap().setZoom(2);
+    } else if (markers.length == 1) {
+    handler.getMap().setZoom(14);
+  }
+});
+});
+<% end %>
+<% end %>
+        </div>
 </div>
-  <% end  %>
-  <% end  %>
+</div>
+</div>
+</div>
 
 
 

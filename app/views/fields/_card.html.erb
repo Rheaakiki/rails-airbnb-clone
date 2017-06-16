@@ -5,8 +5,8 @@
 <%= link_to  field_path(result, :date => params[:search_value]) do%>
 <div class="card m-button" style="background-image: url(https://static.pexels.com/photos/399187/pexels-photo-399187.jpeg)">
 <br>
-<p> <%= result.title %></p>
+<h3><em> <%= result.title %></em></h3>
 <%= result.price %>
-<%= result.address %>
+<p><%= result.address %></p>
 </div>
 <% end %>

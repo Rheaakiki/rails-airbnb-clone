@@ -23,39 +23,47 @@
 }
 
 .card-profile {
-  font-size: 50px;
+  font-size: 120px;
 }
 
-.height-container {
-  margin-top: 50px;
+.rhea-button {
+  margin-top: 30px;
 }
 
-.centering{
-  margin: 0 auto;
+.fa-envelope-open-o {
+  font-size: 20px;
+}
+
+.fa-phone {
+  font-size: 20px;
+}
+
+.fa-pencil {
+  color: white;
 }
 </style>
 
-<div class="container height-container">
+<div class="container">
   <div class="row">
-    <div class="col-xs-6">
-      <i class="fa fa-address-card-o card-profile" aria-hidden="true" style=></i>
-    <h1><%=@user.username%>'s profile</h1>
-        <button class="btn btn-lg btn-show rhea-button">
+    <div class="col-xs-6" style="margin-top: 200px">
+      <i class="fa fa-address-card-o card-profile" aria-hidden="true" style="margin-left: 100px"></i>
+    <h1 style="margin-left: 0px"><%=@user.username%>'s profile</h1>
+        <button class="btn btn-lg btn-show rhea-button centering" style="margin-left: 79px"><i class="fa fa-pencil" aria-hidden="true"></i>
           <%= link_to "Edit My Profile", edit_user_registration_path %>
         </button>
     </div>
-    <div class="col-xs-6">
+    <div class="col-xs-6 text-center" style="margin-top: 100px">
     <h2><b>My Profile</b></h2>
     <h2><%= @user.first_name %></h2>
     <h2><%= @user.last_name%></h2>
-    <h3><%= @user.email %></h3>
-    <h3><%= @user.phone_number %></h3>
+    <h3><i class="fa fa-envelope-open-o" aria-hidden="true"></i> <%= @user.email %></h3>
+    <h3><i class="fa fa-phone" aria-hidden="true"></i> <%= @user.phone_number %></h3>
     <h3><%= @user.biography %></h3>
     <h2><b>All My Bookings</b></h2>
 
     <% current_user.bookings.each do |booking| %>
-    <%= booking.field.title %>
-    <%= booking.date %>
+    <h4><b><i class="fa fa-calendar" aria-hidden="true"></i>  Field: </b><%= booking.field.title %></h4>
+    <h4><b>Date: </b><%= booking.date %></h4>
     <% end  %>
 
     </div>

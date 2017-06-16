@@ -36,10 +36,16 @@ class FieldsController < ApplicationController
 
 
   def show
+
     @field = Field.find(params[:id])
-    date = params[:date]
+    @review = Review.new
+    if params.has_key?(:date)
+      date = params[:date]
     @booking_search =  Date.strptime(date, '%m/%d/%Y')
+  else
+    @field
   end
+end
 
   def new
     @field = Field.new

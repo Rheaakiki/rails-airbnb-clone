@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get "/search", to: "fields#index", as: "search"
   resources :fields, only: [:index, :show, :create, :new, :update, :destroy] do
+    resources :reviews, only: :create
     resources :bookings
   end
   devise_for :users,

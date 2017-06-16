@@ -7,6 +7,7 @@ class Field < ApplicationRecord
   validates :title, presence: true
   validates :price, presence: true
   validates :address, presence: true
+  has_many :reviews, dependent: :destroy
 
 
 

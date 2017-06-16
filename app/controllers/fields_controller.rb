@@ -2,7 +2,7 @@ class FieldsController < ApplicationController
   def index
    @result_final = []
    @fields = Field.all
-   date = params[:search_value]
+   date = params[:search_value] ||Date.now
    @booking_search =  Date.strptime(date, '%m/%d/%Y')
 
    @bookings = Booking.select { |booking| booking.date == @booking_search }

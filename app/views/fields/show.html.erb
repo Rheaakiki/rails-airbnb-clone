@@ -11,10 +11,10 @@
 
   }
 
-.banner{
-  size: cover !important;
-  height: 1300px;
-}
+  .banner{
+    size: cover !important;
+    height: 1300px;
+  }
 
 
   .text-show{
@@ -25,35 +25,49 @@
 </style>
 
 <div class="banner" style="background-image: url(https://static.pexels.com/photos/74158/studjo-yavor-miastko-74158.jpeg)">
-<div class="banner-content">
+  <div class="banner-content">
 
-<div class="text-show text-center">
+    <div class="text-show text-center">
 
-  <h2><b><%= @field.title %></b></h2>
+      <h2><b><%= @field.title %></b></h2>
 
-  <h2>Previous Bookings</h2>
+      <h2>Previous Bookings</h2>
 
-</div>
+    </div>
 
-  <% @field.bookings.each do |booking| %>
-  <h3><%= booking.date  %> | <%= booking.user.email  %></h3>
-  <br>
+    <% @field.bookings.each do |booking| %>
+    <h3><%= booking.date  %> | <%= booking.user.email  %></h3>
+    <br>
 
-  <% end %>
-  <div class="container">
-  <div class="card">
-  <div class="row">
+    <% end %>
+    <div class="container">
+      <div class="card">
+        <div class="row">
 
-<div class="col-xs-4 col-xs-offset-4">
-  <button class="btn btn-lg btn-show">
+          <div class="col-xs-4 col-xs-offset-4">
+          <% if params.has_key?(:date) %>
 
-    <%= link_to "Book for #{params[:date]}" ,field_bookings_path(@field, :date => @booking_search), :method=> :post, :data => {:confirm => 'Are you sure you want to book this field?'}, :class => 'rhea-button'%>
+            <%= link_to "Book for #{params[:date]}" , field_bookings_path(@field, :date => @booking_search), :method=> :post, :data => {:confirm => 'Are you sure you want to book this field?'}, :class => 'rhea-button btn btn-lg btn-show'%>
 
+            <% end %>
 
-  </button>
+          </div>
+        </div>
+        <h2>
+          <%= pluralize @field.reviews.size, "review" %>
+        </h2>
+
+        <div id="reviews">
+          <% if @field.reviews.blank? %>
+          Be the first to leave a review for <%= @field.title %>
+          <% else %>
+          <% @field.reviews.each do |review| %>
+          <%= render 'reviews/show', review: review %>
+          <% end %>
+          <% end %>
+          <%= render 'reviews/form', field: @field, review: @review %>
+        </div>
+      </div>
+    </div>
   </div>
-  </div>
-  </div>
-</div>
-</div>
 </div>

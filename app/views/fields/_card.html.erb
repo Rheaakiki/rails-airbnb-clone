@@ -2,11 +2,11 @@
 
 
 
-<%= link_to  field_path(result, :date => params[:search_value]) do%>
-<div class="card m-button" style="background-image: url(https://static.pexels.com/photos/399187/pexels-photo-399187.jpeg)">
-<br>
-<h3><em> <%= result.title %></em></h3>
-<%= result.price %>
-<p><%= result.address %></p>
-</div>
+<%= link_to  field_path(result, :date => params[:search_value]), class: "card-link" do%>
+  <div class="card m-button">
+  <br>
+  <h3 class="text-center" style="margin-top: 0px";><%= result.title.capitalize %></h3>
+  <p class="text-center ">Daily Price: <%= result.price %>$</p>
+  <p class="text-center">Address: <%= result.address %></p>
+  </div>
 <% end %>

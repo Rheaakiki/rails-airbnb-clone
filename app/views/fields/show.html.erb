@@ -13,7 +13,7 @@
 
   .banner{
     size: cover !important;
-    height: 1300px;
+    height: 700px;
   }
 
 
@@ -24,6 +24,12 @@
 
   .banner-show {
     padding-top: 150px;
+  }
+
+  .text-box{
+    height: auto;
+    width: 800px;
+    margin: auto;
   }
 
 </style>
@@ -60,7 +66,7 @@
           <%= pluralize @field.reviews.size, "review" %>
         </h2>
 
-        <div id="reviews">
+        <div id="reviews" class="text-box">
           <% if @field.reviews.blank? %>
           Be the first to leave a review for <%= @field.title %>
           <% else %>

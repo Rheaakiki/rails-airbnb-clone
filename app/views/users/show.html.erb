@@ -1,31 +1,56 @@
 <style>
-.image_home {
-  height: 100px;
-  position: center;
-}
+  .image_home {
+    height: 100px;
+    position: center;
+  }
 
-.banner-show {
-  color: black;
-}
+  .banner-show {
+    color: black;
+  }
 
+  .btn-show{
+    background-color: #289e4e;
+    border-radius: 20px;
+    margin: 0 auto;
+  }
+
+
+  .rhea-button{
+    color: white;
+
+  }
 </style>
 
 <div class="banner banner-show">
-<div class="text-center">
-<% avatar_url = current_user.facebook_picture_url || "ball-01.png" %>
+  <div class="text-center">
+    <% avatar_url = current_user.facebook_picture_url || class="fa fa-address-card-o" aria-hidden="true" </i> %>
 
-<%= link_to user_profile_path(current_user) do %>
-<%= image_tag avatar_url, :class => "image_home" %><%= t(".profile") %>
-<% end %>
-<h1><%= @user.username %></h1>
+    <%= link_to user_profile_path(current_user) do %>
+    <%= image_tag avatar_url, :class => "image_home" %><%= t(".profile") %>
+    <% end %>
+    <h1><%=@user.username%>'s profile</h1>
+    <h2><%= @user.first_name %></h2>
+    <h2><%= @user.last_name%></h2>
+    <h3><%= @user.email %></h3>
+    <h3><%= @user.phone_number %></h3>
+    <h3><%= @user.biography %></h3>
 
-<%= @user.email %>
 
-<% current_user.bookings.each do |booking| %>
-<%= booking.field.title %>
-<%= booking.date %>
-<% end  %>
+    <% current_user.bookings.each do |booking| %>
+    <%= booking.field.title %>
+    <%= booking.date %>
+    <% end  %>
 
-<%= link_to "edit your profile", edit_user_registration_path %>
+  </div>
 </div>
+<div class="container">
+  <div class="card">
+    <div class="row">
+      <div class="col-xs-4 col-xs-offset-4">
+        <button class="btn btn-lg btn-show">
+          <%= link_to "edit your profile", edit_user_registration_path %>
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
